@@ -1,0 +1,1 @@
+$('.sponsoredGray').parents('.clickcard').hide();

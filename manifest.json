@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Indeed Sponsored Jobs Blocker",
+  "version": "0.1",
+  "description": "Removes sponsored job listings from indeed.com search results.",
+  "author": "Tyler W.",
+  "permissions": ["https://*.indeed.com/*", "declarativeContent"],
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_popup": "popup/popup.html",
+    "default_title": "Indeed Sponsored Jobs Blocker"
+  },
+  "background": {
+    "scripts": ["background/background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.indeed.com/*"],
+      "js": ["jquery/jquery-3.3.1.min.js", "content-scripts/index.js"]
+    }
+  ]
+}
